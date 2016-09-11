@@ -3,4 +3,14 @@
     <string name="app_name">실습 1</string>
     <string name="hello_message">안녕, 세상이여!</string>
     <string name="ButtonText">내가 버튼이여</string>
+    <string name="title_activity_login">로그인</string>
+    <string name="login_textview">로그인</string>
+    <string name="login_hint">로그인명</string>
+    <string name="password_hint">비밀번호</string>
+    <string name="password_textview">패스워드</string>
+    <string name="login_button">로그인</string>
+    <string name="button1_text">버튼 1</string>
+    <string name="button2_text">버튼 2</string>
+    <string name="switch_text">뭔가를 활성화 함</string>
+    <string name="content_desc">내가 이미지뷰여</string>
 </resources>
