@@ -13,4 +13,12 @@
     <string name="button2_text">버튼 2</string>
     <string name="switch_text">뭔가를 활성화 함</string>
     <string name="content_desc">내가 이미지뷰여</string>
+    <string name="ok">예</string>
+    <string name="cancel">아니오</string>
+    <string name="dialog_title">종료 확인</string>
+    <string name="dialog_message">종료버튼을 눌렀습니다. 정말로 종료하시겠습니까?</string>
+    <string name="sw_on">스위치가 켜졌습니다</string>
+    <string name="sw_off">스위치가 꺼졌습니다</string>
+    <string name="shared_message">공유된 정보임</string>
+    <string name="take_message">ListItemsActivity에게서 받은 메시지: </string>
 </resources>

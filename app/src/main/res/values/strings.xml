@@ -12,4 +12,14 @@
     <string name="button2_text">Button 2</string>
     <string name="switch_text">Enable Something</string>
     <string name="content_desc">I\'m the ImageView.</string>
+    <string name="preference_key">email</string>
+    <string name="default_preference_key">DefaultEmail</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
+    <string name="dialog_title">Exit Confirm</string>
+    <string name="dialog_message">Exit button is pressed. Do you want to really exit? </string>
+    <string name="sw_on">Switch is On</string>
+    <string name="sw_off">Switch is Off</string>
+    <string name="shared_message">My information to share</string>
+    <string name="take_message">ListItemsActivity passed: </string>
 </resources>
