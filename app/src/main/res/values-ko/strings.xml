@@ -21,4 +21,15 @@
     <string name="sw_off">스위치가 꺼졌습니다</string>
     <string name="shared_message">공유된 정보임</string>
     <string name="take_message">ListItemsActivity에게서 받은 메시지: </string>
+    <string name="start_chat_text">채팅 시작</string>
+    <string name="send_button_text">전송</string>
+    <string name="start_chat">채팅 시작</string>
+    <string name="send_button">보내기</string>
+    <string name="weatherButtonText">날씨예보</string>
+    <string name="toolbarButtonText">툴바 테스트</string>
+    <string name="about_message">버전 1.0 (김병선)</string>
+    <string name="alert_title">이전 화면으로 돌아갑니까?</string>
+    <string name="new_message">새 메시지</string>
+    <string name="change_message">메시지 바꾸기</string>
+    <string name="back">뒤로</string>
 </resources>

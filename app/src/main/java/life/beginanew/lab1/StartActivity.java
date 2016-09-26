@@ -28,6 +28,19 @@ public class StartActivity extends AppCompatActivity {
                 startActivityForResult(intent, 5);
             }
         });
+
+        // Lab 4-2 add a callback handler so that when you click on the Start Chat button,
+        // it writes information to the debug window: Log.i(ACTIVITY_NAME, “User clicked Start Chat”);
+        Button chatButton = (Button) findViewById(R.id.chatButton);
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                // Lab 4-12: Add code to start a new ChatWindow Activity when the button is clicked.
+                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Lab 3-6 Write the function: onActivityResult...
