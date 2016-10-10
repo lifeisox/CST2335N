@@ -50,9 +50,8 @@ public class StartActivity extends AppCompatActivity {
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
             // Lab 3-11 Android will look in the "extra data" ...
             if (resultCode == Activity.RESULT_OK) {
-                String messagePassed = data.getStringExtra("Response");
-                Toast toast = Toast.makeText(this, getString(R.string.take_message) + messagePassed, Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(this, getString(R.string.take_message) + data.getStringExtra("Response"),
+                        Toast.LENGTH_SHORT).show();
             }
         }
     }

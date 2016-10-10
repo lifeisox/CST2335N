@@ -1,8 +1,12 @@
 package life.beginanew.lab1;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +19,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ChatWindow extends AppCompatActivity {
+    private static final String ACTIVITY_NAME = "ChatWindow";
     // Lab 4-4, add variables for the ListView, EditText
     ListView chatListView;
     EditText chatEditText;
@@ -23,13 +28,18 @@ public class ChatWindow extends AppCompatActivity {
     // Lab 4-10
     ChatAdapter messageAdapter;
     // Lab 5-5
-    //ChatDatabaseHelper dbHelper;
-    //SQLiteDatabase db;
+    ChatDatabaseHelper dbHelper;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
+
+        // Lab 5-5 it creates a temporary ChatDatabaseHelper object, which then gets a writeable
+        // database and stores that as an instance variable.
+        dbHelper = new ChatDatabaseHelper(ChatWindow.this); // Step 5 of Lab 5
+        db = dbHelper.getWritableDatabase(); // Step 5 of Lab 5
 
         // Lab 4-4, initialize these variables using findViewById() for each of your objects.
         chatMessage = new ArrayList<>();
@@ -40,11 +50,13 @@ public class ChatWindow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 chatMessage.add(chatEditText.getText().toString());
-                /* Lab 5
+                // Lab 5-6 Modify the sendButton’s onClickListener callback function so that whenever
+                //va message is added to the ArrayList, it also inserts the new message into the database.
+                // Use a ContentValues object to put the new message.
                 ContentValues contentValues = new ContentValues(); // Step 6 for Lab 5
                 contentValues.put(ChatDatabaseHelper.KEY_MESSAGE, chatEditText.getText().toString()); // Step 6 for Lab 5
-                db.insert(ChatDatabaseHelper.CHAT_TABLE, "", contentValues); // Step 6 for Lab 5
-                */
+                db.insert(ChatDatabaseHelper.TABLE_NAME, "", contentValues); // Step 6 for Lab 5
+
                 // Lab 4-11: The last part is to update the listView whenever there is new data to display
                 messageAdapter.notifyDataSetChanged(); // This restarts the process of getCount() / getView()
                 chatEditText.setText("");
@@ -56,8 +68,8 @@ public class ChatWindow extends AppCompatActivity {
         messageAdapter = new ChatAdapter(this);
         chatListView.setAdapter(messageAdapter);
 
-        /*
-         // Step 5 of Lab 5
+        // Lab 5-5 execute a query for any existing chat messages and add them into the ArrayList
+        // of messages that was created in Lab 4.
         Cursor cursor;
         cursor = db.rawQuery(ChatDatabaseHelper.READALL_CHAT_TABLE, null);
         int messageIndex = cursor.getColumnIndex(ChatDatabaseHelper.KEY_MESSAGE);
@@ -74,12 +86,11 @@ public class ChatWindow extends AppCompatActivity {
         for (int colIndex = 0; colIndex < cursor.getColumnCount(); colIndex++) {
             Log.i(ACTIVITY_NAME, "Column name of " + colIndex + " = " + cursor.getColumnName(colIndex));
         }
-         */
 
     }
 
-    /*
-    // Step 8 for Lab 5
+    // Lab 5-8 Implement the onDestroy() function in ChatWindow.java to close call the super()
+    // version of the function, and also close the database that you opened in onCreate().
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -87,9 +98,9 @@ public class ChatWindow extends AppCompatActivity {
             db.close();
             dbHelper.close();
         } catch (Exception e) {
+            Log.i(ACTIVITY_NAME, "Database closing error: " + e.getMessage());
         }
     }
-     */
 
     // Lab4-5: Create an inner class of ChatWindow, called ChatAdapter, and it should extend ArrayAdapter<String>
     private class ChatAdapter extends ArrayAdapter<String> {
