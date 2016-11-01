@@ -41,6 +41,18 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Lab 6-2 Add a button to the StartActivity page, which should launch the WeatherForecast
+        // activity when the user clicks on the button.
+        Button weatherButton = (Button) findViewById(R.id.weatherButton);
+        weatherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Weather Button");
+                Intent intent = new Intent(StartActivity.this, WeatherForecast.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Lab 3-6 Write the function: onActivityResult...

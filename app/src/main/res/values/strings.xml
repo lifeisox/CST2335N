@@ -34,4 +34,8 @@
     <string name="new_message">New Message</string>
     <string name="change_message">Change Message</string>
     <string name="back">Back</string>
+    <string name="celsius">\u00B0C</string>
+    <string name="low_temperatre">Low: </string>
+    <string name="high_temperatre">High: </string>
+    <string name="weather_text">Weather</string>
 </resources>
