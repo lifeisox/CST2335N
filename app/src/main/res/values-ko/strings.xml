@@ -33,4 +33,5 @@
     <string name="change_message">메시지 바꾸기</string>
     <string name="back">뒤로</string>
     <string name="weather_text">날씨</string>
+    <string name="detailed_message">자세한 메시지</string>
 </resources>

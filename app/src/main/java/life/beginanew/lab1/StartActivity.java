@@ -37,7 +37,8 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.i(ACTIVITY_NAME, "User clicked Start Chat");
                 // Lab 4-12: Add code to start a new ChatWindow Activity when the button is clicked.
-                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                // Lab 7-15: Instead of launching a ChatWindow activity, change it to MessageListActivity.class.
+                Intent intent = new Intent(StartActivity.this, MessageListActivity.class);
                 startActivity(intent);
             }
         });

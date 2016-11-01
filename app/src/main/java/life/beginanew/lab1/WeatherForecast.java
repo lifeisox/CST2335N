@@ -122,7 +122,7 @@ public class WeatherForecast extends AppCompatActivity {
                             publishProgress(75);
                         } else if (tagName.equalsIgnoreCase("weather")) {
                             iconFilename = parser.getAttributeValue(null, "icon") + ".png";
-                            File file = getBaseContext().getFileStreamPath(iconFilename );
+                            File file = getFileStreamPath(iconFilename );
                             if (!file.exists()) {
                                 findImage(iconFilename);
                             } else {
