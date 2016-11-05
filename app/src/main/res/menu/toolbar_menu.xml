@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_item_1"
+        android:title="Dining"
+        android:icon="@drawable/ic_local_dining_white_24dp"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/menu_item_2"
+        android:title="Gas Station"
+        android:icon="@drawable/ic_local_gas_station_white_24dp"
+        android:orderInCategory="102"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/menu_item_3"
+        android:title="Pharmacy"
+        android:icon="@drawable/ic_local_pharmacy_white_24dp"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/menu_about"
+        android:title="About"
+        android:orderInCategory="109"
+        app:showAsAction="never" />
+</menu>

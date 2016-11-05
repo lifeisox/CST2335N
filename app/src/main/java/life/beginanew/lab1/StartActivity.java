@@ -54,6 +54,18 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Lab 8-7: Add a button “Test Toolbar” to the StartActivity class and layout
+        // so that when the user taps it, it starts the TestToolbar activity.
+        Button toolbarButton = (Button) findViewById(R.id.toolbarButton);
+        toolbarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Toolbar Button");
+                Intent intent = new Intent(StartActivity.this, TestToolbar.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // Lab 3-6 Write the function: onActivityResult...

@@ -50,9 +50,9 @@
         <activity android:name=".WeatherForecast" />
         <activity
             android:name=".MessageListActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
             android:label="@string/title_message_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".MessageDetailActivity"
             android:label="@string/title_message_detail"
@@ -62,6 +62,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="life.beginanew.lab1.MessageListActivity" />
         </activity>
+        <activity
+            android:name=".TestToolbar"
+            android:label="@string/title_activity_test_toolbar"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

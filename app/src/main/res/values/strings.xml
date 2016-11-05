@@ -41,4 +41,6 @@
     <string name="title_message_list">Messages</string>
     <string name="title_message_detail">Message Detail</string>
     <string name="detailed_message">Detailed message</string>
+    <string name="toolbar_text">Test Toolbar</string>
+    <string name="title_activity_kkkkk">kkkkk</string>
 </resources>
